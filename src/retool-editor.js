@@ -1,51 +1,11 @@
-import React, { useEffect, useMemo } from 'react';
-import { useEditor, EditorContent } from '@tiptap/react';
-import StarterKit from '@tiptap/starter-kit';
+import React, { useEffect } from 'react';
+import {
+  EditorContent, 
+  useEditor,
+} from '@tiptap/react';
 import './styles.scss';
+import { useExtensions } from './extensions';
 
-import CharacterCount from "@tiptap/extension-character-count";
-import Highlight from "@tiptap/extension-highlight";
-import Link from "@tiptap/extension-link";
-import Placeholder from "@tiptap/extension-placeholder";
-import Typography from "@tiptap/extension-typography";
-
-
-export function getExtensions(
-  { autoLink = true, maxLength, placeholder } = {},
-  customExtensions = [],
-) {
-  return [
-    Highlight,
-    Typography,
-    StarterKit,
-    // Emoji.configure({
-    //   emojis,
-    //   suggestion,
-    // }),
-    autoLink ? Link : Link.configure({ autolink: false }),
-    maxLength && CharacterCount,
-    placeholder && Placeholder.configure({ placeholder }),
-    ...customExtensions,
-  ].filter(Boolean);
-}
-
-export function useExtensions(
-  { autoLink = true, maxLength, placeholder } = {},
-  customExtensions,
-) {
-  return useMemo(() => getExtensions({ autoLink, maxLength, placeholder }, customExtensions), [
-    autoLink,
-    customExtensions,
-    maxLength,
-    placeholder,
-  ]);
-}
-
-
-const DEFAULT_VALUE = {
-  type: "doc",
-  content: [],
-};
 
 const MenuBar = ({ editor }) => {
   if (!editor) {
@@ -194,10 +154,20 @@ const RetoolEditor = ({ triggerQuery, model, modelUpdate }) => {
 
   return (
     <div>
-      <MenuBar editor={editor} />
-      <EditorContent editor={editor} />
+      {model?.label && (<div className='editor-label'>
+          {model?.label}
+        </div>
+      )}
+      <div className="container">
+        <div className='menu-bar'>
+          <MenuBar editor={editor} />
+        </div>
+        <div className='editor'>
+          <EditorContent editor={editor} />
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
 export default RetoolEditor;

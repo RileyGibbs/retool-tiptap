@@ -31,6 +31,7 @@
     "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.4.3",
     "@react-aria/utils": "3.11.3",
+    "@tiptap-pro/extension-emoji": "^2.0.0-beta.17",
     "@tiptap/core": "2.0.0-beta.174",
     "@tiptap/extension-character-count": "2.0.0-beta.25",
     "@tiptap/extension-highlight": "2.0.0-beta.33",
@@ -47,6 +48,7 @@
     "react-dom": "^17.0.2",
     "react-stepper-horizontal": "^1.0.11",
     "sass": "1.50.1",
+    "showdown": "^2.1.0",
     "styled-components": "^5.3.3",
     "tippy.js": "6.3.7",
     "tiptap": "1.32.2"

@@ -54,3 +54,51 @@
     margin: 2rem 0;
   }
 }
+
+.container {
+  width: 97%;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  padding: 4px;
+  margin: 4px;
+  background-color: #ffffff;
+  border: 1px solid #a9a9a9;
+  border-radius: 6px;
+
+  .editor {
+    margin: 4px;
+    display: flex;
+    min-height: 200px;
+    padding-bottom: 38px;
+    cursor: text;
+  }
+}
+
+.ProseMirror:focus {
+  outline: none;
+}
+
+.container:focus-within {
+  outline: none;
+  border: 1px solid #3c92dc;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px #3c92dc;
+}
+
+div.menu-bar {
+  margin-top: 0px;
+  padding-top: 0px;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+div.editor-label {
+  margin-left: 4px;
+  padding-bottom: 4px;
+  color: #262626;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: "Inter var",Inter,-apple-system,BlinkMacSystemFont,system-ui,Segoe UI,Roboto,Helvetica Neue,Ubuntu,sans-serif;
+}
