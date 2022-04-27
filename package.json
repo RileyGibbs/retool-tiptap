@@ -1,7 +1,8 @@
 {
-  "name": "retool_custom_components",
+  "name": "retool_tiptap_component",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Tiptap Editor for use in custom Retool components",
+  "private": false,
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf node_modules && rm -rf dist && rm -rf examples && yarn install",
@@ -10,7 +11,7 @@
     "prod": "webpack --mode=production",
     "prod-examples": "webpack --mode=production --config webpack.examples.config.js"
   },
-  "author": "bryan-at-retool",
+  "author": "rileygibbs",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.15.8",
