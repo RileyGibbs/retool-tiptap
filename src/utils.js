@@ -14,6 +14,9 @@ export function parseValue(defaultValue) {
 
   let value;
 
+  console.log(typeof defaultValue);
+  console.log(defaultValue);
+
   if (typeof defaultValue === "string") {
     try {
       value = JSON.parse(defaultValue);

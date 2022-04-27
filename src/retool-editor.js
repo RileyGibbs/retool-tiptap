@@ -5,6 +5,7 @@ import {
 } from '@tiptap/react';
 import './styles.scss';
 import { useExtensions } from './extensions';
+import { parseValue } from './utils';
 
 
 const MenuBar = ({ editor }) => {
@@ -127,7 +128,7 @@ const MenuBar = ({ editor }) => {
 }
 
 const RetoolEditor = ({ triggerQuery, model, modelUpdate }) => {
-  const value = model?.description ?? DEFAULT_VALUE;
+  const value = parseValue(model.description);
   const editor = useEditor({
     extensions: useExtensions({ autoLink: false, maxLength: 2000, placeholder: "Description" }),
     content: value,
